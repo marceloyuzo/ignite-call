@@ -70,7 +70,13 @@ export default function ConfirmStep({
 
       <label>
         <Text size="sm">Nome Completo</Text>
-        <TextInput placeholder="Seu Nome" {...register('name')}></TextInput>
+        <TextInput
+          placeholder="Seu Nome"
+          {...register('name')}
+          crossOrigin
+          onPointerLeaveCapture
+          onPointerEnterCapture
+        ></TextInput>
         {errors.name && <FormError size="sm">{errors.name.message}</FormError>}
       </label>
 
@@ -80,6 +86,9 @@ export default function ConfirmStep({
           type="email"
           placeholder="exemplo@example.com"
           {...register('email')}
+          crossOrigin
+          onPointerLeaveCapture
+          onPointerEnterCapture
         ></TextInput>
         {errors.email && (
           <FormError size="sm">{errors.email.message}</FormError>
